@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +32,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
 
         holder.image.setImageResource(featuredHelperClass.getImage());
         holder.title.setText(featuredHelperClass.getTitle());
-        holder.rating.setText(featuredHelperClass.getRating());
+        holder.rating.setRating(featuredHelperClass.getRating());
         holder.desc.setText(featuredHelperClass.getDescription());
 
     }
@@ -48,7 +49,8 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
     public static class FeaturedViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
-        TextView title, rating, desc;
+        TextView title, desc;
+        RatingBar rating;
 
         public FeaturedViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -9,6 +9,8 @@ import android.view.WindowManager;
 
 import com.example.cityguidedashboard.helperclasses.homeadapter.FeaturedAdapter;
 import com.example.cityguidedashboard.helperclasses.homeadapter.FeaturedHelperClass;
+import com.example.cityguidedashboard.helperclasses.homeadapter.MostViewedAdpater;
+import com.example.cityguidedashboard.helperclasses.homeadapter.MostViewedHelperClass;
 
 import java.util.ArrayList;
 
@@ -27,12 +29,12 @@ public class UserDashboard extends AppCompatActivity {
 
         //Hooks
         featuredRecycler = findViewById(R.id.featured_recycler);
-        //mostViewedRecycler = findViewById(R.id.mostViewedRecycler);
+        mostViewedRecycler = findViewById(R.id.mostViewedRecycler);
         //categoriesRecycler = findViewById(R.id.categories_recycler);
 
         //Functions will be executed automatically when this activity will be created
         featuredRecycler();
-        //mostViewedRecycler();
+        mostViewedRecycler();
         //categoriesRecycler();
 
 
@@ -62,21 +64,21 @@ public class UserDashboard extends AppCompatActivity {
 
     }
 */
-    /*private void mostViewedRecycler() {
+    private void mostViewedRecycler() {
 
         mostViewedRecycler.setHasFixedSize(true);
         mostViewedRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<MostViewedHelperClass> mostViewedLocations = new ArrayList<>();
 
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonalds, "Mcdonald's", "4.5","One Big Mac®, served with our World Famous Fries® and your choice of an icy soft drink"));
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.dominos, "Domino's", "3.8","One large Cheese & Tomato pizza (9.5 inches wide) with 3 toppings "));
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.kfc, "KFC", "4.2","Get 6 pcs Hot & Crispy, 8 pcs Hot Wings and Free 1 Litre Pepsi "));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonalds, "Mcdonald's", 4.5F,"One Big Mac®, served with our World Famous Fries® and your choice of an icy soft drink"));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.dominos, "Domino's", (float) 3.8,"One large Cheese & Tomato pizza (9.5 inches wide) with 3 toppings "));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.kfc, "KFC", (float) 2,"Get 6 pcs Hot & Crispy, 8 pcs Hot Wings and Free 1 Litre Pepsi "));
 
         adapter = new MostViewedAdpater(mostViewedLocations);
         mostViewedRecycler.setAdapter(adapter);
 
-    }*/
+    }
 
     private void featuredRecycler() {
 
@@ -85,13 +87,12 @@ public class UserDashboard extends AppCompatActivity {
 
         ArrayList<FeaturedHelperClass> featuredLocations = new ArrayList<>();
 
-        featuredLocations.add(new FeaturedHelperClass(R.drawable.mcdonalds, "Mcdonald's", "4.5","One Big Mac®, served with our World Famous Fries® and your choice of an icy soft drink"));
-        featuredLocations.add(new FeaturedHelperClass(R.drawable.dominos, "Domino's", "3.8","One large Cheese & Tomato pizza (9.5 inches wide) with 3 toppings "));
-        featuredLocations.add(new FeaturedHelperClass(R.drawable.kfc, "KFC", "4.2","Get 6 pcs Hot & Crispy, 8 pcs Hot Wings and Free 1 Litre Pepsi "));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.mcdonalds, "Mcdonald's", 4.5F,"One Big Mac®, served with our World Famous Fries® and your choice of an icy soft drink"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.dominos, "Domino's", (float) 3.8,"One large Cheese & Tomato pizza (9.5 inches wide) with 3 toppings "));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.kfc, "KFC", (float) 2,"Get 6 pcs Hot & Crispy, 8 pcs Hot Wings and Free 1 Litre Pepsi "));
 
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);
-
 
     }
 }
